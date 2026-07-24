@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    overflow: hidden;
+}
+
+/* Decorative background circles */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+body::before {
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Form Card */
+form {
+    width: 380px;
+    padding: 40px 35px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    z-index: 1;
+}
+
+/* Add heading */
+form::before {
+    content: "Create Account";
+
+    display: block;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+input {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Input focus */
+input:focus {
+    border-color: white;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: scale(1.02);
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Button */
+button {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    color: #6c5ce7;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+
+    background: #f1f1f1;
+}
+
+/* Button click */
+button:active {
+    transform: translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 450px) {
+
+    form {
+        width: 90%;
+        padding: 30px 25px;
+    }
+
+    form::before {
+        font-size: 24px;
+    }
+}
